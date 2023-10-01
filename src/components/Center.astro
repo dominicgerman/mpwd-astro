@@ -1,0 +1,34 @@
+---
+interface Props {
+  maxInlineSize?: string
+  gutters?: string
+  textCenter?: string
+  intrinsic?: boolean
+}
+
+const { maxInlineSize, gutters, textCenter, intrinsic } = Astro.props
+---
+
+<div class:list={['center', { maxInlineSize, gutters, textCenter, intrinsic }]}>
+  <slot />
+</div>
+
+<style define:vars={{ gutters, maxInlineSize }}>
+  .maxInlineSize {
+    max-inline-size: var(--maxInlineSize);
+  }
+  .gutters {
+    /* gutters for when width is smaller than max-inline-size */
+    padding-inline-start: var(--gutters);
+    padding-inline-end: var(--gutters);
+  }
+  .textCenter {
+    text-align: center;
+  }
+  .intrinsic {
+    /* Centers child elements smaller than max-value */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

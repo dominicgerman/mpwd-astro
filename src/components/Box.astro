@@ -1,0 +1,34 @@
+---
+interface Props {
+  border?: string
+  color?: string
+  padding?: string
+  bgColor?: string
+  inverted?: boolean
+}
+
+const { border, color, padding, bgColor, inverted } = Astro.props
+---
+
+<div class:list={['box', { border, color, padding, bgColor, inverted }]}>
+  <slot />
+</div>
+
+<style define:vars={{ border, padding, color, bgColor }}>
+  .border {
+    border: var(--border);
+  }
+  .padding {
+    padding: var(--padding);
+  }
+  .color {
+    color: var(--color);
+  }
+  .bgColor {
+    background-color: var(--bgColor);
+  }
+  .inverted {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+  }
+</style>
