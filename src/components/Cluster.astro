@@ -1,0 +1,27 @@
+---
+interface Props {
+  space?: string
+  justifyContent?: string
+  alignItems?: string
+}
+
+const { space, justifyContent, alignItems } = Astro.props
+---
+
+<ul class:list={['cluster', { justifyContent, alignItems }]}>
+  <slot />
+</ul>
+
+<style define:vars={{ space, justifyContent, alignItems }}>
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space, 1rem);
+  }
+  .justifyContent {
+    justify-content: var(--justifyContent);
+  }
+  .alignItems {
+    align-items: var(--alignItems);
+  }
+</style>

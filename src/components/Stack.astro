@@ -1,20 +1,18 @@
 ---
 interface Props {
   space?: string
-  splitAfter?: number
   recursive?: boolean
 }
 
-const { space, splitAfter, recursive } = Astro.props
+const { space, recursive } = Astro.props
 ---
 
-<div class:list={['stack', { splitAfter, recursive }]}>
+<div class:list={['stack', { recursive }]}>
   <slot />
 </div>
 
 <style define:vars={{ space }}>
   div {
     --space: var(--space, 1.5rem);
-    /* --splitAfter: var(--splitAfter); */
   }
 </style>

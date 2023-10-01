@@ -3,46 +3,60 @@ import Layout from '../layouts/Layout.astro'
 import Box from '../components/Box.astro'
 import Stack from '../components/Stack.astro'
 import Center from '../components/Center.astro'
+import Cluster from '../components/Cluster.astro'
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <Center>
-      <Box border="var(--border-thick) solid">
-        <Box inverted>
-          <h1>Header Shit</h1>
+  <main class="with-sidebar">
+    <Box>
+      <h1>hi</h1>
+    </Box>
+    <Box>
+      <Center>
+        <Box border="var(--border-thick) solid">
+          <Box inverted>
+            <h1>Header Shit</h1>
+          </Box>
+          <Box border="none">
+            <Stack>
+              <Box bgColor="aquamarine">
+                <h2>Some shit</h2><p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Atque quaerat assumenda eaque, tenetur dicta mollitia quam
+                  repellat, omnis adipisci consequatur aliquam id tempore illo
+                  consectetur fugit magni rem, corporis non?
+                </p>
+              </Box>
+              <Box bgColor="pink">
+                <h2>Some shit</h2><p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Atque quaerat assumenda eaque, tenetur dicta mollitia quam
+                  repellat, omnis adipisci consequatur aliquam id tempore illo
+                  consectetur fugit magni rem, corporis non?
+                </p>
+              </Box>
+              <Box bgColor="#eb8755">
+                <Cluster>
+                  <li>Fuck</li>
+                  <li>Tittles</li>
+                  <li>Boobes</li>
+                  <li>Hey there</li>
+                  <li>Alligator</li>
+                  <li>Pussy sweat</li>
+                </Cluster>
+              </Box>
+            </Stack>
+          </Box>
         </Box>
-        <Box border="none">
-          <Stack splitAfter={2}>
-            <Box bgColor="aquamarine">
-              <h2>Some shit</h2><p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-                quaerat assumenda eaque, tenetur dicta mollitia quam repellat,
-                omnis adipisci consequatur aliquam id tempore illo consectetur
-                fugit magni rem, corporis non?
-              </p>
-            </Box>
-            <Box bgColor="pink">
-              <h2>Some shit</h2><p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-                quaerat assumenda eaque, tenetur dicta mollitia quam repellat,
-                omnis adipisci consequatur aliquam id tempore illo consectetur
-                fugit magni rem, corporis non?
-              </p>
-            </Box>
-            <Box bgColor="#eb8755">
-              <h2>Some shit</h2><p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-                quaerat assumenda eaque, tenetur dicta mollitia quam repellat,
-                omnis adipisci consequatur aliquam id tempore illo consectetur
-                fugit magni rem, corporis non?
-              </p>
-            </Box>
-          </Stack>
-        </Box>
-      </Box>
-    </Center>
+      </Center>
+    </Box>
   </main>
 </Layout>
 
-<style></style>
+<style>
+  li {
+    background-color: bisque;
+    padding: 0.5rem;
+    border-radius: 999px;
+  }
+</style>
