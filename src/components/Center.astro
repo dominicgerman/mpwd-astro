@@ -9,18 +9,19 @@ interface Props {
 const { maxInlineSize, gutters, textCenter, intrinsic } = Astro.props
 ---
 
-<div class:list={['center', { maxInlineSize, gutters, textCenter, intrinsic }]}>
+<div class:list={['center', { textCenter, intrinsic }]}>
   <slot />
 </div>
 
 <style define:vars={{ gutters, maxInlineSize }}>
-  .maxInlineSize {
-    max-inline-size: var(--maxInlineSize);
-  }
-  .gutters {
+  .center {
+    box-sizing: content-box;
+    margin-inline: auto;
+    max-inline-size: var(--maxInlineSize, var(--measure));
+
     /* gutters for when width is smaller than max-inline-size */
-    padding-inline-start: var(--gutters);
-    padding-inline-end: var(--gutters);
+    padding-inline-start: var(--gutters, 0px);
+    padding-inline-end: var(--gutters, 0px);
   }
   .textCenter {
     text-align: center;

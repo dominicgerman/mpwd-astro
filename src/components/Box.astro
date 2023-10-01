@@ -10,23 +10,18 @@ interface Props {
 const { border, color, padding, bgColor, inverted } = Astro.props
 ---
 
-<div class:list={['box', { border, color, padding, bgColor, inverted }]}>
+<div class:list={['box', { inverted }]}>
   <slot />
 </div>
 
 <style define:vars={{ border, padding, color, bgColor }}>
-  .border {
-    border: var(--border);
+  .box {
+    padding: var(--padding, var(--s1));
+    border: var(--border, var(--border-thin) solid);
+    color: var(--color, var(--color-dark));
+    background-color: var(--bgColor, var(--color-light));
   }
-  .padding {
-    padding: var(--padding);
-  }
-  .color {
-    color: var(--color);
-  }
-  .bgColor {
-    background-color: var(--bgColor);
-  }
+
   .inverted {
     color: var(--color-light);
     background-color: var(--color-dark);

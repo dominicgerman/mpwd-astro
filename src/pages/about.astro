@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Center from '../components/Center.astro'
+import Box from '../components/Box.astro'
+import Switcher from '../components/Switcher.astro'
+---
+
+<Layout title="Shit talkin">
+  <main>
+    <Center>
+      <Switcher class="fuckboi">
+        <Box>Poop time</Box>
+        <Box>Poop time</Box>
+        <Box>Poop time</Box>
+        <Box>Poop time</Box>
+        <Box>Poop time</Box>
+      </Switcher>
+    </Center>
+  </main>
+</Layout>
+
+<style>
+  .fuckboi > :nth-last-child(n + 5),
+  .fuckboi > :nth-last-child(n + 5) ~ * {
+    flex-basis: 100%;
+  }
+</style>

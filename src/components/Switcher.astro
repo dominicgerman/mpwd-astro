@@ -1,0 +1,23 @@
+---
+// interface Props {
+//   gap?: string
+//   threshold?: string
+//   class?: string
+// }
+
+const { class: className, gap, threshold = '30rem' } = Astro.props
+---
+
+<div class={`switcher ${className}`}>
+  <slot />
+</div>
+
+<style define:vars={{ gap, threshold }}>
+  .switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap, var(--s1));
+    --threshold: var(--threshold);
+    --limit: var(--limit);
+  }
+</style>

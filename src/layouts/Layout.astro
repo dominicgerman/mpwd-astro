@@ -35,6 +35,7 @@ const { title } = Astro.props
 
     --measure: 65ch;
     --splitAfter: 0;
+    --limit: 5;
 
     --ratio: 1.5;
     --s-5: calc(var(--s-4) / var(--ratio));
@@ -67,12 +68,6 @@ const { title } = Astro.props
     font-family: var(--font-special);
   }
 
-  .stack {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
   .stack > * {
     margin-block: 0;
   }
@@ -89,21 +84,8 @@ const { title } = Astro.props
     margin-block-start: var(--space, 1.5rem);
   }
 
-  .box {
-    padding: var(--s1);
-    border: var(--border-thin) solid;
-    color: var(--color-dark);
-    background-color: var(--color-light);
-  }
-
   .box * {
     color: inherit;
-  }
-
-  .center {
-    box-sizing: content-box;
-    margin-inline: auto;
-    max-inline-size: var(--measure);
   }
 
   .with-sidebar {
@@ -121,5 +103,15 @@ const { title } = Astro.props
     flex-basis: 0;
     flex-grow: 999;
     min-inline-size: 65%;
+  }
+
+  .switcher > * {
+    flex-grow: 1;
+    flex-basis: calc((var(--threshold) - 100%) * 999);
+  }
+
+  .fuckboi > :nth-last-child(n + 5),
+  .fuckboi > :nth-last-child(n + 5) ~ * {
+    flex-basis: 100%;
   }
 </style>

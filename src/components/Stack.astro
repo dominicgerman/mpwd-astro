@@ -12,7 +12,10 @@ const { space, recursive } = Astro.props
 </div>
 
 <style define:vars={{ space }}>
-  div {
+  .stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     --space: var(--space, 1.5rem);
   }
 </style>
