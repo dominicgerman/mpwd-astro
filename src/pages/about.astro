@@ -3,9 +3,17 @@ import Layout from '../layouts/Layout.astro'
 import Center from '../components/Center.astro'
 import Box from '../components/Box.astro'
 import Switcher from '../components/Switcher.astro'
+import Cover from '../components/Cover.astro'
 ---
 
 <Layout title="Shit talkin">
+  <Cover>
+    <Box>This is a header</Box>
+    <Center textCenter>
+      <h1>This is the centered bit</h1>
+    </Center>
+    <Box>This is below the centered bit</Box>
+  </Cover>
   <main>
     <Center>
       <Switcher class="fuckboi">
