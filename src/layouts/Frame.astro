@@ -1,0 +1,22 @@
+---
+interface Props {
+  aspectRatio: number[]
+}
+
+const { aspectRatio } = Astro.props
+console.log(aspectRatio)
+---
+
+<div class="frame">
+  <slot />
+</div>
+
+<style define:vars={{ n: aspectRatio[0], d: aspectRatio[1] }}>
+  .frame {
+    aspect-ratio: var(--n, 16) / var(--d, 9);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

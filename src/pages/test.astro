@@ -4,6 +4,8 @@ import Center from '../layouts/Center.astro'
 import Box from '../layouts/Box.astro'
 import Switcher from '../layouts/Switcher.astro'
 import Cover from '../layouts/Cover.astro'
+import Grid from '../layouts/Grid.astro'
+import Frame from '../layouts/Frame.astro'
 ---
 
 <Layout title="Shit talkin">
@@ -11,7 +13,7 @@ import Cover from '../layouts/Cover.astro'
     <Box>This is a header</Box>
     <Box>Another one</Box>
     <Center textCenter style="margin-block: auto">
-      <h1>This is the centered bit</h1>
+      <h1>Hey there center cover</h1>
     </Center>
     <Box>Another one</Box>
     <Box>This is below the centered bit</Box>
@@ -25,7 +27,20 @@ import Cover from '../layouts/Cover.astro'
         <Box>Poop time</Box>
         <Box>Poop time</Box>
       </Switcher>
+      <Grid>
+        <Box bgColor="aquamarine">Some content</Box>
+        <Box bgColor="aquamarine">Some content</Box>
+        <Box bgColor="aquamarine">Some content</Box>
+        <Box bgColor="aquamarine">Some content</Box>
+        <Box bgColor="aquamarine">Some content</Box>
+      </Grid>
     </Center>
+    <Frame aspectRatio={[16, 9]}>
+      <img
+        src="https://www.npcovenant.org/wp-content/uploads/2023/09/1-ECC.jpg"
+        alt=""
+      />
+    </Frame>
   </main>
 </Layout>
 

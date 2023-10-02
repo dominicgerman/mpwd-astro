@@ -1,0 +1,30 @@
+---
+interface Props {
+  gap?: string
+  min?: string
+  class?: string
+  style?: string
+}
+
+const { gap, min, class: className, style } = Astro.props
+---
+
+<div class:list={['grid']} class={className} style={style || ''}>
+  <slot />
+</div>
+
+<style define:vars={{ gap, min }}>
+  .grid {
+    display: grid;
+    gap: var(--gap, var(--s1));
+  }
+
+  @supports (width: min(var(--min, 250px), 100%)) {
+    .grid {
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(var(--min, 250px), 100%), 1fr)
+      );
+    }
+  }
+</style>

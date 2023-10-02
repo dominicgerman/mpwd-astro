@@ -1,62 +1,10 @@
 ---
-import Layout from '../layouts/Page.astro'
-import Box from '../layouts/Box.astro'
-import Stack from '../layouts/Stack.astro'
-import Center from '../layouts/Center.astro'
-import Cluster from '../layouts/Cluster.astro'
+import Page from '../layouts/Page.astro'
+import Cover from '../layouts/Cover.astro'
+import Header from '../components/Header.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="with-sidebar">
-    <Box>
-      <h1>hi</h1>
-    </Box>
-    <Box>
-      <Center textCenter>
-        <Box border="var(--border-thick) solid">
-          <Box inverted>
-            <h1>Header Shit</h1>
-          </Box>
-          <Box border="none">
-            <Stack recursive>
-              <Box bgColor="aquamarine">
-                <h2>Some shit</h2><p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Atque quaerat assumenda eaque, tenetur dicta mollitia quam
-                  repellat, omnis adipisci consequatur aliquam id tempore illo
-                  consectetur fugit magni rem, corporis non?
-                </p>
-              </Box>
-              <Box bgColor="pink">
-                <h2>Some shit</h2><p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Atque quaerat assumenda eaque, tenetur dicta mollitia quam
-                  repellat, omnis adipisci consequatur aliquam id tempore illo
-                  consectetur fugit magni rem, corporis non?
-                </p>
-              </Box>
-              <Box bgColor="#eb8755">
-                <Cluster>
-                  <li>Fuck</li>
-                  <li>Tittles</li>
-                  <li>Boobes</li>
-                  <li>Hey there</li>
-                  <li>Alligator</li>
-                  <li>Pussy sweat</li>
-                </Cluster>
-              </Box>
-            </Stack>
-          </Box>
-        </Box>
-      </Center>
-    </Box>
-  </main>
-</Layout>
-
-<style>
-  li {
-    background-color: bisque;
-    padding: 0.5rem;
-    border-radius: 999px;
-  }
-</style>
+<Page title="Mount Prospect Web Design">
+  <Header />
+  <main></main>
+</Page>
