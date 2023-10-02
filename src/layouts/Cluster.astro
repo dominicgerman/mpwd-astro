@@ -3,12 +3,24 @@ interface Props {
   space?: string
   justifyContent?: string
   alignItems?: string
+  class?: string
+  style?: string
 }
 
-const { space, justifyContent, alignItems } = Astro.props
+const {
+  space,
+  justifyContent,
+  alignItems,
+  class: className,
+  style,
+} = Astro.props
 ---
 
-<ul class:list={['cluster', { justifyContent, alignItems }]}>
+<ul
+  class:list={['cluster', { justifyContent, alignItems }]}
+  class={className}
+  style={style || ''}
+>
   <slot />
 </ul>
 

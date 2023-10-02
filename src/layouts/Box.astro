@@ -5,12 +5,22 @@ interface Props {
   padding?: string
   bgColor?: string
   inverted?: boolean
+  class?: string
+  style?: string
 }
 
-const { border, color, padding, bgColor, inverted } = Astro.props
+const {
+  border,
+  color,
+  padding,
+  bgColor,
+  inverted,
+  class: className,
+  style,
+} = Astro.props
 ---
 
-<div class:list={['box', { inverted }]}>
+<div class:list={['box', { inverted }]} class={className} style={style || ''}>
   <slot />
 </div>
 

@@ -2,12 +2,18 @@
 interface Props {
   space?: string
   recursive?: boolean
+  class?: string
+  style?: string
 }
 
-const { space, recursive } = Astro.props
+const { space, recursive, class: className, style } = Astro.props
 ---
 
-<div class:list={['stack', { recursive }]}>
+<div
+  class:list={['stack', { recursive }]}
+  class={className}
+  style={style || ''}
+>
   <slot />
 </div>
 

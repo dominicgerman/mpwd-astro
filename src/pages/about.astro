@@ -1,17 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Center from '../components/Center.astro'
-import Box from '../components/Box.astro'
-import Switcher from '../components/Switcher.astro'
-import Cover from '../components/Cover.astro'
+import Layout from '../layouts/Page.astro'
+import Center from '../layouts/Center.astro'
+import Box from '../layouts/Box.astro'
+import Switcher from '../layouts/Switcher.astro'
+import Cover from '../layouts/Cover.astro'
 ---
 
 <Layout title="Shit talkin">
-  <Cover>
+  <Cover coverSpace="1rem">
     <Box>This is a header</Box>
-    <Center textCenter>
+    <Box>Another one</Box>
+    <Center textCenter style="margin-block: auto">
       <h1>This is the centered bit</h1>
     </Center>
+    <Box>Another one</Box>
     <Box>This is below the centered bit</Box>
   </Cover>
   <main>

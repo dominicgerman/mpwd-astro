@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Box from '../components/Box.astro'
-import Stack from '../components/Stack.astro'
-import Center from '../components/Center.astro'
-import Cluster from '../components/Cluster.astro'
+import Layout from '../layouts/Page.astro'
+import Box from '../layouts/Box.astro'
+import Stack from '../layouts/Stack.astro'
+import Center from '../layouts/Center.astro'
+import Cluster from '../layouts/Cluster.astro'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,13 +12,13 @@ import Cluster from '../components/Cluster.astro'
       <h1>hi</h1>
     </Box>
     <Box>
-      <Center>
+      <Center textCenter>
         <Box border="var(--border-thick) solid">
           <Box inverted>
             <h1>Header Shit</h1>
           </Box>
           <Box border="none">
-            <Stack>
+            <Stack recursive>
               <Box bgColor="aquamarine">
                 <h2>Some shit</h2><p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.

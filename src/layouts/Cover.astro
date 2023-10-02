@@ -1,0 +1,24 @@
+---
+interface Props {
+  coverSpace?: string
+  minHeight?: string
+  class?: string
+  style?: string
+}
+
+const { coverSpace, minHeight, class: className, style } = Astro.props
+---
+
+<div class:list={['cover']} class={className} style={style || ''}>
+  <slot />
+</div>
+
+<style define:vars={{ coverSpace, minHeight }}>
+  .cover {
+    display: flex;
+    flex-direction: column;
+    min-block-size: var(--minHeight, 100vh);
+    padding: 1rem;
+    --coverSpace: var(--coverSpace, var(--s1));
+  }
+</style>

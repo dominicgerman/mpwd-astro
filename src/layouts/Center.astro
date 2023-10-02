@@ -4,12 +4,25 @@ interface Props {
   gutters?: string
   textCenter?: boolean
   intrinsic?: boolean
+  class?: string
+  style?: string
 }
 
-const { maxInlineSize, gutters, textCenter, intrinsic } = Astro.props
+const {
+  maxInlineSize,
+  gutters,
+  textCenter,
+  intrinsic,
+  class: className,
+  style,
+} = Astro.props
 ---
 
-<div class:list={['center', { textCenter, intrinsic }]}>
+<div
+  class:list={['center', { textCenter, intrinsic }]}
+  class={className}
+  style={style || ''}
+>
   <slot />
 </div>
 
